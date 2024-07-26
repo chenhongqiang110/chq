@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHQ.COM POC Demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap-grid.min.css" rel="stylesheet"/>
+    <style>
+        .panel {
+            text-align: center;
+        }
+        .welcome {
+            margin-bottom: 0;
+        }
+        .big-title span {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .description {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <h1 class="welcome">Welcome to</h1>
+        <div class="big-title">
+            <span>CHQ.COM</span>
+        </div>
+        <div class="description">This is a XXXX POC Demo for XXX</div>
+    </div>
+
+    <section data-block-type="contents" data-id="1" draggable="true" class="fdb-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row justify-content-center pb-5">
+                        <div class="col-12 col-lg-8 text-center">
+                            <h1>
+                                <span class="c2104">Welcome!</span>
+                            </h1>
+                        </div>
+                    </div>
+                    <img alt="image" src="https://static.htmlpage.cn/editor/images/design2.png" class="img-fluid"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watson Assistant Chat Widget -->
+    <div id="watsonAssistantChat" style="width: 100%; height: 400px;"></div>
+
+    <!-- Your provided script for Watson Assistant Chat -->
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "cfefd1d2-aec7-427f-a563-9ffa8ec89b4b", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "c8f59d83-b3f2-4b94-beaa-6e0bad3215e8", // The ID of your service instance.
+        onLoad: async (instance) => { await instance.render(); }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
